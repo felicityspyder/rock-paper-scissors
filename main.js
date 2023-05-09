@@ -1,3 +1,16 @@
+
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        console.log(button.id);
+    });
+});
+
+const container = document.querySelector('.container');
+const div = document.createElement('div');
+container.appendChild(div);
+
+
 let myArray = ['rock', 'paper', 'scissors'];
 
 
@@ -28,7 +41,7 @@ function game() { //burrowed from ChatGPT
     let playerScore = 0;
     let computerScore = 0;
 
-    for (let i = 1; i <= 5; i++) {
+    /* for (let i = 1; i <= 5; i++) {
         const playerSelection = prompt(`Round ${i}: Choose, rock, paper or scissors`).toLowerCase();
         const computerSelection = getComputerChoice(myArray);
         const roundResult = playRound(playerSelection, computerSelection);
@@ -41,6 +54,7 @@ function game() { //burrowed from ChatGPT
             computerScore++;
         }
     }
+    */
 
     console.log(`Final score: Player ${playerScore} - ${computerScore} Computer`)
 
@@ -54,6 +68,9 @@ function game() { //burrowed from ChatGPT
 }
 
 game();
+
+
+
 
 // const playerSelection = prompt('Let\'s play rock, paper scissors. Type your hand position below').toLowerCase();
 // const computerSelection = getComputerChoice(myArray);
