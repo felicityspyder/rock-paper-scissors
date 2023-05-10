@@ -7,6 +7,15 @@ buttons.forEach((button) => {
 });*/
 
 
+const myArray = ['rock', 'paper', 'scissors'];
+
+
+function getComputerSelection(myArray) {
+    let selectRandom = Math.floor(Math.random() * myArray.length);
+    return myArray[selectRandom];
+} 
+
+let computerSelection = getComputerSelection(myArray);
 let playerSelection;
 
 function getPlayerSelection() {
@@ -17,28 +26,6 @@ function getPlayerSelection() {
             playRound();
         });
     });
-}
-
-
-const container = document.querySelector('.container');
-const div = document.createElement('div');
-container.appendChild(div);
-
-
-let myArray = ['rock', 'paper', 'scissors'];
-
-
-function getComputerSelection(myArray) {
-    let selectRandom = Math.floor(Math.random() * myArray.length);
-    return myArray[selectRandom];
-} 
-
-
-const computerSelection = getComputerSelection(myArray);
-
-function playRound() {
-    const result = getResult(playerSelection, computerSelection);
-    console.log(result);
 }
 
 function getResult(playerSelection, computerSelection) { //syntax burrowed from TOP example
@@ -58,7 +45,17 @@ function getResult(playerSelection, computerSelection) { //syntax burrowed from 
         return ('It\'s a tie! Play again.')
     }
 }
+
+function playRound() {
+    computerSelection = getComputerSelection(myArray); // computer will always select the same argument otherwise
+    const result = getResult(playerSelection, computerSelection);
+    console.log(result);
+}
+
 getPlayerSelection();
 
+const container = document.querySelector('.container');
+const div = document.createElement('div');
+container.appendChild(div);
 
 
